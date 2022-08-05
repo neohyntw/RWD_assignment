@@ -89,6 +89,7 @@ a{
 }
 
 .bar .nav li a{
+	display: block;
 	padding: 10px 20px;
 	color: white;
 	margin-left: 10px;
@@ -219,7 +220,7 @@ a{
 	line-height: 1.5; 
 	color: #3D1101;
 	text-align: center;
-	margin-bottom: 30px;
+	margin-bottom: 30px; .order
 }
 
 .feature  .title-container{
@@ -247,8 +248,7 @@ a{
 
 @media(max-width: 576px){
 	.feature .list{
-		flex-direction: column;
-		align-items: center;
+		display: block;
 	}
 	.feature .list li{
 		width: 90%;
@@ -319,7 +319,7 @@ a{
 
 @media(max-width: 576px){
 	.chef .wrap{
-		flex-direction: column;
+		display: block;
 	}
 
 	.chef .container{
@@ -343,16 +343,22 @@ a{
 	color: #3D1101;
 }
 
-@media(max-width: 576px){
-	.review ul{
-		flex-direction: column;
-	}
-}
-
 .review ul li{
 	display: flex;
 	width: 30%;
 	padding: 10px;
+}
+
+@media(max-width: 576px){
+	.review ul{
+		flex-direction: column;
+		width: 100%;
+	}
+	.review ul li{
+		display: flex;
+		width: 100%;
+		padding: 10px;
+	}
 }
 
 .review ul li img{
@@ -416,18 +422,19 @@ a{
 
 @media(max-width: 576px){
 	.reserve-form{
-		flex-direction: column;
-		align-items: center;
+		display: block;
 	}
 
 	.reserve-form form{
 		width: 90%;
-		margin: 0 1%;
+		margin: auto;
 	}
 
 	.reserve-form img{
+		display: block;
 		width: 90%;
-		margin: 0 1% 30px;
+		margin: 10px auto;
+
 	}
 }
 
@@ -462,7 +469,7 @@ a{
 	margin: 0;
 }
 
-.vegan-btn span{
+.reserve-form form .vegan-btn label{
 	width: auto;
 	margin: 0;
 	font-size: 14px;
@@ -625,7 +632,6 @@ a{
 }
 
 .login form, .register-form{
-	display: block;
 	padding: 40px;
 	margin: 40px auto;
 	border-top: 4px solid #F56C23;
@@ -730,8 +736,7 @@ a{
 
 @media(max-width: 576px){
 	.register-form .wrap{
-		flex-direction: column;
-		align-items: center;
+		display: block;
 	}
 
 	.register-form .wrap > *{
@@ -960,13 +965,24 @@ a{
 	display: flex;
 	flex-wrap: wrap;
 }
-.menu-list  li{
-	width: 30%;
+.menu-list li{
+	width: calc((720px - 40px) / 3);
 	background: #EFE9E7;
 	box-shadow: 3px 3px 4px 0px rgba(0,0,0,0.16);
 	margin-bottom: 20px;
 	margin-right: 20px;
 	position: relative;
+}
+
+.menu-list li:nth-child(3n){
+	margin-right: 0;
+}
+
+@media(max-width: 1020px){
+	.menu-list li:nth-child(3n){
+	margin-right: 20px;
+}
+
 }
 
 @media(max-width: 992px){
@@ -994,11 +1010,6 @@ a{
 	width: 100%;
 	z-index: 1;
 	
-}
-
-.product-img{
-	position: relative;
-	z-index: 0;
 }
 
 .menu-list li > i, .menu-list li > a{
